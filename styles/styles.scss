@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'Marvin';
+    src: url('../fonts/MarvinVisionsBig-Bold.woff') format('woff')
+}
+
+@font-face {
+    font-family: 'MarvinExtraLight';
+    src: url('../fonts/MarvinVisionsBig-ExtraLight.woff') format('woff')
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: coral;
+}
+
+h1, h2 {
+    font-weight: normal;
+}
+
+h1 {
+    font-family: 'Marvin';
+    font-size: 100px;
+    color: antiquewhite;
+    line-height: 0.8;
+}
+
+h2 {
+    font-family: 'MarvinExtraLight';
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+
+h2 span {
+    color: blueviolet;
+}
