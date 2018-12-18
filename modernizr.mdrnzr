@@ -1,0 +1,13 @@
+{
+  "minify": true,
+  "classPrefix" : "fd-",
+  "options": [
+    "setClasses",
+    "addTest"
+  ],
+  "feature-detects": [
+    "css/flexbox",
+    "css/mask",
+    "css/backgroundcliptext"
+  ]
+}

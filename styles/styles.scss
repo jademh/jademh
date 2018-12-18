@@ -3,37 +3,122 @@
     src: url('../fonts/MarvinVisionsBig-Bold.woff') format('woff')
 }
 
-@font-face {
-    font-family: 'MarvinExtraLight';
-    src: url('../fonts/MarvinVisionsBig-ExtraLight.woff') format('woff')
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 
 body {
     margin: 0;
     padding: 0;
+    background: #fcf4e9;
+}
+
+.splash {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: coral;
-}
-
-h1, h2 {
-    font-weight: normal;
+    height: 100vh;
+    .fd-backgroundcliptext & {
+        background-image: linear-gradient(coral, #f170b0);
+        background-clip: text;
+    }
 }
 
 h1 {
     font-family: 'Marvin';
-    font-size: 100px;
-    color: antiquewhite;
+    font-weight: normal;
+    font-size: 50px;
+    color: coral;
+    .fd-backgroundcliptext & {
+        color: transparent;
+    }
     line-height: 0.8;
-}
-
-h2 {
-    font-family: 'MarvinExtraLight';
-    font-size: 30px;
-    letter-spacing: 1px;
+    letter-spacing: 3px;
+    transition: font-size 300ms ease-in-out;
+    @media screen and (min-width: 340px) {
+        font-size: 60px;
+    }
+    @media screen and (min-width: 420px) {
+        font-size: 80px;
+    }
+    @media screen and (min-width: 750px) {
+        font-size: 140px;
+    }
 }
 
 h2 span {
     color: blueviolet;
+}
+
+footer {
+    position: fixed;
+    bottom: 10px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.social {
+    display: flex;
+    padding: 0;
+    &_item {
+        margin: 0 5px;
+    }
+    &_link {
+        display: block;
+        text-indent: -9999px;
+        width: 30px;
+        height: 30px;
+        .fd-cssmask & {
+            mask-size: 30px 30px;
+            background-color: #9b9285;
+            transition: background-color 300ms ease-in-out;
+        }
+        .fd-no-cssmask & {
+            background-size: 30px 30px;
+        }
+        &--twitter {
+            .fd-cssmask & {
+                mask-image: url(../icons/twitter.svg);
+            }
+            .fd-no-cssmask & {
+                background-image: url(../icons/twitter.svg);
+            }
+        }
+        &--instagram {
+            .fd-cssmask & {
+                mask-image: url(../icons/instagram.svg);
+            }
+            .fd-no-cssmask & {
+                background-image: url(../icons/instagram.svg);
+            }
+        }
+        &--github {
+            .fd-cssmask & {
+                mask-image: url(../icons/github.svg);
+            }
+            .fd-no-cssmask & {
+                background-image: url(../icons/github.svg);
+            }
+        }
+        &--linkedin {
+            .fd-cssmask & {
+                mask-image: url(../icons/linkedin.svg);
+            }
+            .fd-no-cssmask & {
+                background-image: url(../icons/linkedin.svg);
+            }
+        }
+        &:hover,
+        &:focus {
+            .fd-cssmask & {
+                background-color: coral;
+            }
+        }
+    }
 }

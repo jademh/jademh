@@ -5,6 +5,9 @@
   "license": "MIT",
   "devDependencies": {
     "parcel-bundler": "^1.10.3",
+    "parcel-plugin-modernizr": "^1.1.4",
+    "modernizr": "^3.6.0",
+    "postcss-modules": "^1.4.1",
     "sass": "^1.15.2"
   },
   "scripts": {
@@ -13,5 +16,19 @@
   },
   "dependencies": {
     "autoprefixer": "^9.4.3"
+  },
+  "postcss": {
+    "modules": false,
+    "plugins": {
+      "autoprefixer": {
+        "browsers": [
+          ">1%",
+          "last 4 versions",
+          "Firefox ESR",
+          "not ie < 9"
+        ],
+        "flexbox": "no-2009"
+      }
+    }
   }
 }
