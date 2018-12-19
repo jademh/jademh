@@ -1,6 +1,8 @@
 @font-face {
     font-family: 'Marvin';
-    src: url('../fonts/MarvinVisionsBig-Bold.woff') format('woff')
+    src: url("../fonts/MarvinVisionsBig-Bold.woff2") format("woff2"),
+         url("../fonts/MarvinVisionsBig-Bold.woff") format("woff"),
+         url('../fonts/MarvinVisionsBig-Bold.eot') format('eot')
 }
 
 html {
