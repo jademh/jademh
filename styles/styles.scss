@@ -1,8 +1,11 @@
+$font-path: '../assets/fonts/';
+$icon-path: '../assets/icons/';
+
 @font-face {
     font-family: 'Marvin';
-    src: url("../fonts/MarvinVisionsBig-Bold.woff2") format("woff2"),
-         url("../fonts/MarvinVisionsBig-Bold.woff") format("woff"),
-         url('../fonts/MarvinVisionsBig-Bold.eot') format('eot')
+    src: url("#{$font-path}MarvinVisionsBig-Bold.woff2") format("woff2"),
+         url("#{$font-path}MarvinVisionsBig-Bold.woff") format("woff"),
+         url('#{$font-path}MarvinVisionsBig-Bold.eot') format('eot')
 }
 
 html {
@@ -19,42 +22,57 @@ body {
 }
 
 .splash {
+    $splash-img-height: 205px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
-}
+    &_title {
+        font-family: 'Marvin';
+        font-weight: normal;
+        color: coral;
+        margin: 0;
+        .fd-backgroundcliptext & {
+            background-image: linear-gradient(coral, #f170b0);
+            background-clip: text;
+            color: transparent;
+        }
+        $line-height: 40px;
+        font-size: 50px;
+        line-height: $line-height;
+        margin-top: -($splash-img-height - $line-height);
+        letter-spacing: 3px;
+        transition: margin-top 300ms ease-in-out;
+        animation-name: fadein;
+        animation-duration: 2s;
+        @media screen and (min-width: 340px) {
+            $line-height: 48px;
+            font-size: 60px;
+            line-height: $line-height;
+            margin-top: -($splash-img-height - $line-height);
+        }
+        @media screen and (min-width: 420px) {
+            $line-height: 64px;
+            font-size: 80px;
+            line-height: $line-height;
+            margin-top: -($splash-img-height - $line-height);
+        }
+        @media screen and (min-width: 750px) {
+            $line-height: 112px;
+            font-size: 140px;
+            line-height: $line-height;
+            margin-top: -($splash-img-height - $line-height);
+        }
+        &-image {
+            height: $splash-img-height;
+            transition: transform 300ms ease-in-out;
+            &:hover {
+                transform: rotate(4deg);
+            }
+        }
+    }
 
-h1 {
-    font-family: 'Marvin';
-    font-weight: normal;
-    font-size: 50px;
-    color: coral;
-    margin: 0;
-    .fd-backgroundcliptext & {
-        background-image: linear-gradient(coral, #f170b0);
-        background-clip: text;
-        color: transparent;
-    }
-    line-height: 0.8;
-    letter-spacing: 3px;
-    transition: font-size 300ms ease-in-out;
-    animation-name: fadein;
-    animation-duration: 2s;
-    @media screen and (min-width: 340px) {
-        font-size: 60px;
-    }
-    @media screen and (min-width: 420px) {
-        font-size: 80px;
-    }
-    @media screen and (min-width: 750px) {
-        font-size: 140px;
-    }
-}
-
-h2 span {
-    color: blueviolet;
 }
 
 footer {
@@ -70,6 +88,8 @@ footer {
 }
 
 .social {
+    $icon-height: 30px;
+    $icon-width: $icon-height;
     display: flex;
     padding: 0;
     &_item {
@@ -78,46 +98,46 @@ footer {
     &_link {
         display: block;
         text-indent: -9999px;
-        width: 30px;
-        height: 30px;
+        width: $icon-height;
+        height: $icon-width;
         .fd-cssmask & {
-            mask-size: 30px 30px;
+            mask-size: $icon-height $icon-width;
             background-color: #9b9285;
             transition: background-color 300ms ease-in-out;
         }
         .fd-no-cssmask & {
-            background-size: 30px 30px;
+            background-size: $icon-height $icon-width;
         }
         &--twitter {
             .fd-cssmask & {
-                mask-image: url(../icons/twitter.svg);
+                mask-image: url(#{$icon-path}twitter.svg);
             }
             .fd-no-cssmask & {
-                background-image: url(../icons/twitter.svg);
+                background-image: url(#{$icon-path}twitter.svg);
             }
         }
         &--instagram {
             .fd-cssmask & {
-                mask-image: url(../icons/instagram.svg);
+                mask-image: url(#{$icon-path}instagram.svg);
             }
             .fd-no-cssmask & {
-                background-image: url(../icons/instagram.svg);
+                background-image: url(#{$icon-path}instagram.svg);
             }
         }
         &--github {
             .fd-cssmask & {
-                mask-image: url(../icons/github.svg);
+                mask-image: url(#{$icon-path}github.svg);
             }
             .fd-no-cssmask & {
-                background-image: url(../icons/github.svg);
+                background-image: url(#{$icon-path}github.svg);
             }
         }
         &--linkedin {
             .fd-cssmask & {
-                mask-image: url(../icons/linkedin.svg);
+                mask-image: url(#{$icon-path}linkedin.svg);
             }
             .fd-no-cssmask & {
-                background-image: url(../icons/linkedin.svg);
+                background-image: url(#{$icon-path}linkedin.svg);
             }
         }
         &:hover,
