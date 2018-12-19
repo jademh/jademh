@@ -1,1 +1,2 @@
-http://jademh.netlify.com/* http://www.jademh.com/:splat 301!
+http://jademh.netlify.com/* https://www.jademh.com/:splat 301!
+https://jademh.netlify.com/* https://www.jademh.com/:splat 301!
