@@ -4,9 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
+    "modernizr": "^3.6.0",
     "parcel-bundler": "^1.10.3",
     "parcel-plugin-modernizr": "^1.1.4",
-    "modernizr": "^3.6.0",
+    "parcel-plugin-static-files-copy": "^1.2.4",
     "postcss-modules": "^1.4.1",
     "sass": "^1.15.2"
   },
