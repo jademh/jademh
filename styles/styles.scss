@@ -21,10 +21,6 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    .fd-backgroundcliptext & {
-        background-image: linear-gradient(coral, #f170b0);
-        background-clip: text;
-    }
 }
 
 h1 {
@@ -33,11 +29,15 @@ h1 {
     font-size: 50px;
     color: coral;
     .fd-backgroundcliptext & {
+        background-image: linear-gradient(coral, #f170b0);
+        background-clip: text;
         color: transparent;
     }
     line-height: 0.8;
     letter-spacing: 3px;
     transition: font-size 300ms ease-in-out;
+    animation-name: fadein;
+    animation-duration: 2s;
     @media screen and (min-width: 340px) {
         font-size: 60px;
     }
@@ -61,6 +61,8 @@ footer {
     width: 100%;
     display: flex;
     justify-content: center;
+    animation-name: fadein-footer;
+    animation-duration: 2s;
 }
 
 .social {
@@ -121,4 +123,15 @@ footer {
             }
         }
     }
+}
+
+@keyframes fadein {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadein-footer {
+    0% { opacity: 0; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
 }
