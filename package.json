@@ -9,7 +9,11 @@
     "parcel-plugin-modernizr": "^1.1.4",
     "parcel-plugin-static-files-copy": "^1.2.4",
     "postcss-modules": "^1.4.1",
-    "sass": "^1.15.2"
+    "prettier": "^1.16.4",
+    "prettier-stylelint": "^0.4.2",
+    "sass": "^1.15.2",
+    "stylelint": "^9.10.1",
+    "stylelint-config-standard": "^18.2.0"
   },
   "scripts": {
     "dev": "parcel index.html",

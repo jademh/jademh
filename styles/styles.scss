@@ -1,90 +1,138 @@
 $font-path: '../assets/fonts/';
 $icon-path: '../assets/icons/';
 
-@font-face {
-    font-family: 'Marvin';
-    src: url("#{$font-path}MarvinVisionsBig-Bold.woff2") format("woff2"),
-         url("#{$font-path}MarvinVisionsBig-Bold.woff") format("woff"),
-         url('#{$font-path}MarvinVisionsBig-Bold.eot') format('eot')
-}
+$color-bg: #fcfbf8;
+$color-accent: #058656;
 
 @font-face {
   font-family: 'Calibre';
-  src: url("#{$font-path}CalibreTest-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'CalibreThin';
-  src: url("#{$font-path}CalibreTest-Thin.woff") format("woff");
+  src: url('#{$font-path}CalibreTest-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-*, *:before, *:after {
-    box-sizing: inherit;
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background: #FCFBF8;
-    font-family: 'Calibre', sans-serif;
-    border: 13px solid #058656;
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  background: $color-bg;
+  border: 7px solid $color-accent;
+  font-family: 'Calibre', sans-serif;
+  transition: border-width 300ms ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media screen and (min-width: 600px) {
+    border-width: 13px;
+  }
 }
 
 .logo {
-    width: 100%;
-    &-wrp {
-        text-align: center;
-        position: relative;
-        width: 300px;
-        height: 210px;
-        margin: 0 auto;
-        margin-top: 40px;
-        img {
-            width: 140px;
-            position: absolute;
-            top: 38px;
-            left: 83px;
-        }
+  width: 100%;
+
+  &-wrp {
+    text-align: center;
+    position: relative;
+    width: 300px;
+    height: 210px;
+    margin: 0 auto;
+    margin-top: 40px;
+    animation: fadein-logo;
+    animation-duration: 2s;
+
+    img {
+      width: 140px;
+      position: absolute;
+      top: 38px;
+      left: 83px;
     }
-}
-text {
-    fill: #058656;
+  }
+
+  text {
+    fill: $color-accent;
     font-size: 51px;
+  }
 }
 
-h1 {
-    position: absolute;
-    margin: 0;
-    top: 20px;
-    right: 30px;
-    color: #058656;
+.top-right {
+  position: absolute;
+  margin: 0;
+  top: 18px;
+  right: 23px;
+  color: $color-accent;
+  font-size: 20px;
+  display: none;
+
+  @media screen and (min-width: 600px) {
+    display: block;
+  }
 }
 
-strong, em, b, i, h1, h2, h3, h4{
+strong,
+em,
+b,
+i,
+h1,
+h2,
+h3,
+h4 {
   font-weight: normal;
   font-style: normal;
 }
 
-p {
-  font-size: 28px;
-  color: #058656;
-  margin-top: 0;
-  a {
-    color:inherit;
+h2 {
+  font-size: 80px;
+  line-height: 70px;
+  letter-spacing: 4px;
+  text-align: center;
+  margin: 1em 0 0.5em 0;
+  color: coral;
+  transform: skew(-30deg);
+}
+
+h3 {
+  color: $color-accent;
+  font-size: 40px;
+  font-weight: normal;
+  margin: 0;
+
+  > a {
+    color: inherit;
     text-decoration: none;
-    border-bottom: 2px solid coral;
-    transition: border 300ms ease-in-out;
+    transition: color 300ms ease-in-out;
+
     &:hover {
-      border-color: red;
+      color: pink;
     }
   }
+}
+
+p {
+  font-size: 28px;
+  color: $color-accent;
+  margin-top: 0;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 2px solid pink;
+    transition: border 300ms ease-in-out;
+
+    &:hover {
+      border-color: coral;
+    }
+  }
+
   .emoji {
     font-size: 18px;
   }
@@ -92,159 +140,151 @@ p {
 
 .p--hero {
   font-size: 40px;
-  img {
-    margin: 0;
-    width: 150px;
-  }
 }
 
-h2 {
-  font-size: 200px;
-  line-height: 0.7em;
-  width: 800px;
-  margin: 0 auto;
-  color: coral;
-  span {
-    margin-left: 520px;
-  }
-  margin-top: 150px;
+figcaption {
+  color: $color-accent;
 }
 
-h3 {
-  color: #058656;
-  font-size: 60px;
-  font-weight: normal;
-  margin-bottom: 0;
-  a {
-    color: inherit;
-    text-decoration: none;
-    transition: color 300ms ease-in-out;
-    &:hover {
-      color: coral;
-    }
-  }
-  &:before {
-    content: '* * *';
-    display: block;
-    width: 100%;
-    text-align: center;
-    color: pink;
-    font-size: 40px;
-  }
-}
+.section {
+  padding: 0 4%;
+  max-width: 700px;
+  margin: 50px auto 0 auto;
+  animation: fadein-content;
+  animation-duration: 2s;
 
-.about {
-  padding: 100px 0;
-  &_section {
-    margin: 40px auto;
-    padding: 0 3%;
-    margin-bottom: 100px;
-    @media screen and (min-width: 720px) {
-      width: 860px;
-      padding: 0 5%;
-      &--wide {
-        padding: 0;
-      }
-    }
-  }
   &_img {
-    width: 420px;
+    width: 100%;
+
     &-wrp {
-      text-align: center;
+      max-width: 350px;
+      margin: 0 auto;
     }
+
     &--br {
       border-radius: 6px;
+    }
+  }
+
+  &--mini {
+    p {
+      font-size: 22px;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      margin: 45px auto 30px auto;
+      transform: rotate(3deg);
+    }
+
+    &:nth-child(even)::after {
+      transform: rotate(-3deg);
     }
   }
 }
 
 .social {
-    $icon-height: 30px;
-    $icon-width: $icon-height;
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    margin: 0 auto;
-    margin-bottom: 60px;
-    &_item {
-      margin: 0 5px;
+  $icon-height: 30px;
+  $icon-width: $icon-height;
+
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 100px auto 50px auto;
+
+  &_item {
+    margin: 0 5px;
+  }
+
+  &_link {
+    display: block;
+    text-indent: -9999px;
+    width: $icon-height;
+    height: $icon-width;
+
+    .fd-cssmask & {
+      mask-size: $icon-height $icon-width;
+      background-color: #5c9b75;
+      transition: background-color 300ms ease-in-out;
     }
-    &_link {
-      display: block;
-      text-indent: -9999px;
-      width: $icon-height;
-      height: $icon-width;
+
+    .fd-no-cssmask & {
+      background-size: $icon-height $icon-width;
+    }
+
+    &--twitter {
       .fd-cssmask & {
-          mask-size: $icon-height $icon-width;
-          background-color: #5c9b75;
-          transition: background-color 300ms ease-in-out;
+        mask-image: url(#{$icon-path}twitter.svg);
       }
+
       .fd-no-cssmask & {
-          background-size: $icon-height $icon-width;
-      }
-      &--twitter {
-          .fd-cssmask & {
-              mask-image: url(#{$icon-path}twitter.svg);
-          }
-          .fd-no-cssmask & {
-              background-image: url(#{$icon-path}twitter.svg);
-          }
-      }
-      &--instagram {
-          .fd-cssmask & {
-              mask-image: url(#{$icon-path}instagram.svg);
-          }
-          .fd-no-cssmask & {
-              background-image: url(#{$icon-path}instagram.svg);
-          }
-      }
-      &--github {
-          .fd-cssmask & {
-              mask-image: url(#{$icon-path}github.svg);
-          }
-          .fd-no-cssmask & {
-              background-image: url(#{$icon-path}github.svg);
-          }
-      }
-      &--linkedin {
-          .fd-cssmask & {
-              mask-image: url(#{$icon-path}linkedin.svg);
-          }
-          .fd-no-cssmask & {
-              background-image: url(#{$icon-path}linkedin.svg);
-          }
-      }
-      &:hover,
-      &:focus {
-          .fd-cssmask & {
-              background-color: coral;
-          }
+        background-image: url(#{$icon-path}twitter.svg);
       }
     }
+
+    &--instagram {
+      .fd-cssmask & {
+        mask-image: url(#{$icon-path}instagram.svg);
+      }
+
+      .fd-no-cssmask & {
+        background-image: url(#{$icon-path}instagram.svg);
+      }
+    }
+
+    &--github {
+      .fd-cssmask & {
+        mask-image: url(#{$icon-path}github.svg);
+      }
+
+      .fd-no-cssmask & {
+        background-image: url(#{$icon-path}github.svg);
+      }
+    }
+
+    &--linkedin {
+      .fd-cssmask & {
+        mask-image: url(#{$icon-path}linkedin.svg);
+      }
+
+      .fd-no-cssmask & {
+        background-image: url(#{$icon-path}linkedin.svg);
+      }
+    }
+
+    &:hover,
+    &:focus {
+      .fd-cssmask & {
+        background-color: coral;
+      }
+    }
+  }
 }
 
-@keyframes wave {
+@keyframes fadein-logo {
   0% {
-		transform: rotate(4deg);
-	}
+    opacity: 0;
+  }
 
-	50% {
-		transform: rotate(0deg);
-	}
-
-	100% {
-		transform: rotate(4deg);
-	}
+  100% {
+    opacity: 1;
+  }
 }
 
+@keyframes fadein-content {
+  0% {
+    opacity: 0;
+  }
 
-@keyframes fadein {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
+  50% {
+    opacity: 0;
+  }
 
-@keyframes fadein-footer {
-    0% { opacity: 0; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
+  100% {
+    opacity: 1;
+  }
 }
