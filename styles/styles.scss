@@ -5,7 +5,7 @@ $color-bg: #fcfbf8;
 $color-accent: #058656;
 $color-accent--secondary: pink;
 $color-accent--tertiary: coral;
-$color-note: #0606b9;
+$color-note: $color-accent;
 
 @font-face {
   font-family: 'Calibre';
