@@ -4001,14 +4001,6 @@ parcel-plugin-modernizr@^1.1.4:
     fs-extra "^7.0.0"
     modernizr "^3.6.0"
 
-parcel-plugin-prettier@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/parcel-plugin-prettier/-/parcel-plugin-prettier-0.0.4.tgz#6341a2fc6122c96f39f5045b96eaed36ce2f3e5a"
-  dependencies:
-    jsonfile "^4.0.0"
-    mkdirp "^0.5.1"
-    prettier "^1.10.2"
-
 parcel-plugin-static-files-copy@^1.2.4:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/parcel-plugin-static-files-copy/-/parcel-plugin-static-files-copy-1.2.4.tgz#a05add8e0f5efd3164b16e2817b797936da531c9"
@@ -4855,7 +4847,7 @@ prettier-stylelint@^0.4.2:
     tempy "^0.2.1"
     update-notifier "^2.2.0"
 
-prettier@^1.10.2, prettier@^1.16.4, prettier@^1.7.0:
+prettier@^1.16.4, prettier@^1.7.0:
   version "1.16.4"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.16.4.tgz#73e37e73e018ad2db9c76742e2647e21790c9717"
 
