@@ -9,8 +9,7 @@ $color-note: $color-accent;
 
 @font-face {
   font-family: 'Calibre';
-  src:
-    url('#{$font-path}CalibreWeb-Regular.woff') format('woff'),
+  src: url('#{$font-path}CalibreWeb-Regular.woff') format('woff'),
     url('#{$font-path}CalibreWeb-Regular.woff2') format('woff2'),
     url('#{$font-path}CalibreWeb-Regular.eot') format('eot');
   font-weight: normal;
