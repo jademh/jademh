@@ -5,7 +5,7 @@
   "license": "MIT",
   "devDependencies": {
     "modernizr": "^3.6.0",
-    "parcel-bundler": "^1.10.3",
+    "parcel-bundler": "^1.12.4",
     "parcel-plugin-modernizr": "^1.1.4",
     "parcel-plugin-static-files-copy": "^1.2.4",
     "postcss-modules": "^1.4.1",
